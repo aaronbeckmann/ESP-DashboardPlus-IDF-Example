@@ -1,0 +1,31 @@
+# ESP32-S3 target
+CONFIG_IDF_TARGET="esp32s3"
+
+# Flash: 8 MB QIO, 80 MHz (common on S3 devkits)
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+
+# PSRAM: Octal (OPI) PSRAM on most S3 modules
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+
+# Partition table: OTA-capable (needed for firmware updates via dashboard)
+CONFIG_PARTITION_TABLE_TWO_OTA=y
+
+# Increase main task stack for C++ dashboard overhead
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# WebSocket support (required by ESP-DashboardPlus)
+CONFIG_HTTPD_WS_SUPPORT=y
+
+# WiFi
+CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM=10
+CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM=32
+
+# HTTP/WS mode — no TLS (set to n to switch back to HTTPS/WSS)
+CONFIG_DASHBOARD_USE_HTTP=y
+
+# Log level: INFO in production, DEBUG during testing
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y

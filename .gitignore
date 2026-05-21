@@ -1,0 +1,46 @@
+# ESP-IDF build output
+build/
+build.log
+
+# Managed components (auto-fetched by idf.py)
+managed_components/
+
+# Component manager lock (optional: commit if you want reproducible builds)
+# dependencies.lock
+
+# sdkconfig — project-specific, user should run menuconfig themselves
+sdkconfig
+sdkconfig.old
+
+# Generated HTML C array (re-generated at build time from the library)
+main/dashboard_html.h
+main/dashboard_html.c
+src/dashboard_html.c
+src/dashboard_html.h
+
+# TLS certificates (generated locally, never commit private keys)
+certs/
+*.pem
+*.key
+*.crt
+*.der
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Python cache (from build scripts)
+__pycache__/
+*.pyc
+*.pyo
